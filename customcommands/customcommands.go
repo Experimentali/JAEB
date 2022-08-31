@@ -379,8 +379,8 @@ func filterEmptyResponses(s string, ss ...string) []string {
 }
 
 const (
-	MaxCommands        = 100
-	MaxCommandsPremium = 250
+	MaxCommands        = 5
+	MaxCommandsPremium = 20
 	MaxUserMessages    = 20
 	MaxGroups          = 50
 )
