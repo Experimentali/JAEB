@@ -82,19 +82,19 @@ func ParseAllRulePartData(dataModels []*models.AutomodRuleDatum) ([]interface{},
 }
 
 const (
-	MaxMessageTriggers        = 20
-	MaxMessageTriggersPremium = 100
+	MaxMessageTriggers        = 5
+	MaxMessageTriggersPremium = 30
 
-	MaxViolationTriggers        = 20
-	MaxViolationTriggersPremium = 100
+	MaxViolationTriggers        = 10
+	MaxViolationTriggersPremium = 40
 
-	MaxTotalRules        = 25
-	MaxTotalRulesPremium = 150
+	MaxTotalRules        = 15
+	MaxTotalRulesPremium = 50
 
 	MaxLists        = 5
 	MaxListsPremium = 25
 
-	MaxRuleParts = 25
+	MaxRuleParts = 5
 
 	MaxRulesets        = 10
 	MaxRulesetsPremium = 25
