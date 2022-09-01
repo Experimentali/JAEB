@@ -101,7 +101,7 @@
     {{$dot := .}}
     {{range .PremiumSlots}}
     <div class="col-md-6 mb-2">
-        <section class="card {{if .GuildID.Valid}}card-featured card-featured-success{{end}}">
+        <section class="card {{if $dot.PremiumSlotDurationRemaining > 0}}card-featured cart-featured-failure{{end}}{{if .GuildID.Valid}}card-featured card-featured-success{{end}}">
             <header class="card-header">
                 <h2 class="card-title">Premium Slot</h2>
             </header>
@@ -109,7 +109,7 @@
             <div class="card-body">
                 <ul>
                     <li>{{if not .Permanent}}Expires in:
-                        <code>{{call $dot.PremiumSlotDurationRemaining .}}</code>{{else}}Expires
+                        <code>{{{if $dot.PremiumSlotDurationRemaining < 1}}{{call $dot.PremiumSlotDurationRemaining .}}{{else}}EXPIRED{{end}}</code>{{else}}Expires
                         never{{end}}.
                     </li>
                     {{if .Message}}<li>{{.Message}}</li>{{end}}
