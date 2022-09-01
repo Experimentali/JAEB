@@ -19,6 +19,7 @@ import (
 	"github.com/botlabs-gg/yagpdb/v2/common/cplogs"
 	"github.com/botlabs-gg/yagpdb/v2/lib/discordgo"
 	"github.com/botlabs-gg/yagpdb/v2/web"
+	"github.com/botlabs-gg/yagpdb/v2/premium"
 	"github.com/jinzhu/gorm"
 	"github.com/mediocregopher/radix/v3"
 	"goji.io"
@@ -120,6 +121,10 @@ func (p *Plugin) HandleNew(w http.ResponseWriter, r *http.Request) (web.Template
 	ctx := r.Context()
 	activeGuild, templateData := web.GetBaseCPContextData(ctx)
 
+	if premium.ContextPremiumTier(ctx) != premium.PremiumTierPremium {
+		return templateData.AddAlerts(web.ErrorAlert("YouTube feeds are paid premium only")), nil
+	}
+	
 	// limit it to max 25 feeds
 	var count int
 	common.GORM.Model(&ChannelSubscription{}).Where("guild_id = ?", activeGuild.ID).Count(&count)
