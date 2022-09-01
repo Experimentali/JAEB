@@ -95,7 +95,7 @@ func SoundFilePath(id int, status TranscodingStatus) string {
 }
 
 const (
-	MaxGuildSounds        = 10
+	MaxGuildSounds        = 3
 	MaxGuildSoundsPremium = 50
 )
 
