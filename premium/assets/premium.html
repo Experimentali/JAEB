@@ -109,7 +109,7 @@
             <div class="card-body">
                 <ul>
                     <li>{{if not .Permanent}}Expires in:
-                        <code>{{call $dot.PremiumSlotDurationRemaining .}</code>{{else}}Expires
+                        <code>{{call $dot.PremiumSlotDurationRemaining .}}</code>{{else}}Expires
                         never{{end}}.
                     </li>
                     {{if .Message}}<li>{{.Message}}</li>{{end}}
