@@ -406,11 +406,6 @@ func (m *Manager) updateStatusMessage(mID int64) (int64, error) {
 
 		content += fmt.Sprintf("[%d/%d]: %s (%d,%d)\n", shard.Shard, m.numShards, gwStatus, shard.NumGuilds, status.NumGuilds)
 	}
-
-	nameStr := ""
-	if m.Name != "" {
-		nameStr = " for " + m.Name
-	}
 	embed := &discordgo.MessageEmbed{
 		Title:       "Sharding status for JAEB",
 		Description: content,
