@@ -359,7 +359,7 @@ func (m *Manager) statusRoutine() {
 			}
 
 			embed := msg.Embeds[0]
-			if embed.Title == "Sharding status"+nameStr {
+			if embed.Title == "Sharding status for JAEB" {
 				// Found it sucessfully
 				mID = msg.ID
 				break
@@ -417,7 +417,7 @@ func (m *Manager) updateStatusMessage(mID int64) (int64, error) {
 		nameStr = " for " + m.Name
 	}
 	embed := &discordgo.MessageEmbed{
-		Title:       "Sharding status" + nameStr,
+		Title:       "Sharding status for JAEB",
 		Description: content,
 		Color:       0x4286f4,
 		Timestamp:   time.Now().Format(time.RFC3339),
