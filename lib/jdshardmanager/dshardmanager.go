@@ -353,11 +353,6 @@ func (m *Manager) statusRoutine() {
 				continue
 			}
 
-			nameStr := ""
-			if m.Name != "" {
-				nameStr = " for " + m.Name
-			}
-
 			embed := msg.Embeds[0]
 			if embed.Title == "Sharding status for JAEB" {
 				// Found it sucessfully
